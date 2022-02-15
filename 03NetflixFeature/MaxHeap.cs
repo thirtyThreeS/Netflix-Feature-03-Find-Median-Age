@@ -11,9 +11,10 @@ namespace _03NetflixFeature
         List<T>? h = null;
         void PercolateUp(int i)
         {
-            if (i <= 0) return;
-            else if (h[parent(i)].CompareTo (h[i]) < 0)
+            if (i <= 0) { return; }
+            else if (h[parent(i)].CompareTo(h[i]) < 0)
             {
+                // Swaps the value of two variables
                 T temp = h[i];
                 h[i] = h[parent(i)];
                 h[parent(i)] = temp;
@@ -42,8 +43,8 @@ namespace _03NetflixFeature
         public int size() => h.Count;
         public T peek()
         {
-            if (size() <= 0) return (T)Convert.ChangeType(-1, typeof(T));
-            else return h[0];
+            if (size() <= 0) { return (T)Convert.ChangeType(-1, typeof(T)); }
+            else { return h[0]; }
         }
         public void insert(T key)
         {
@@ -77,7 +78,7 @@ namespace _03NetflixFeature
         public void poll()
         {
             // Remove the last item from the list
-            if (size() == 1) h.RemoveAt(h.Count - 1);
+            if (size() == 1) { h.RemoveAt(h.Count - 1); }
             else if (size() > 1)
             {
                 // Swaps the value of two variables

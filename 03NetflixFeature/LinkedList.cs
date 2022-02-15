@@ -63,7 +63,10 @@ namespace _03NetflixFeature
         {
             if (head == null) return node;
             LinkedListNode temp = head;
-            while (temp.next != null) temp = temp.next;
+            while (temp.next != null)
+            {
+                temp = temp.next;
+            }
             temp.next = node;
             return head;
         }
@@ -100,7 +103,7 @@ namespace _03NetflixFeature
         {
             LinkedListNode? listHead = null;
             Random gen = new();
-            for (int i = 0; i < length; ++i) listHead = InsertAtHead(listHead, gen.Next(100));
+            for (int i = 0; i < length; ++i) { listHead = InsertAtHead(listHead, gen.Next(100)); }
             return listHead;
         }
 

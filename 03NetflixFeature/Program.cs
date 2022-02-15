@@ -13,13 +13,13 @@ class MedianOfAges
 
     public void InsertNum(int num)
     {
-        if (maxHeap.size() == 0 || maxHeap.peek() >= num) maxHeap.insert(num);
-        else minHeap.insert(num);
+        if (maxHeap.size() == 0 || maxHeap.peek() >= num) { maxHeap.insert(num); }
+        else { minHeap.insert(num); }
 
         if (maxHeap.size() > minHeap.size() + 1)
         {
             minHeap.insert(maxHeap.peek());
-            minHeap.poll();
+            maxHeap.poll();
         }
         else if (maxHeap.size() < minHeap.size())
         {

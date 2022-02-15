@@ -27,11 +27,13 @@ namespace _03NetflixFeature
                 MinHeapify(imin);
             }
         }
+        // PercolateUp() is meant to restore the heap property going up from a node to the root
         void PercolateUp(int i)
         {
-            if (i <= 0) return;
+            if (i <= 0) { return; }
             else if (h[parent(i)].CompareTo(h[i]) > 0)
             {
+                // Swaps the value of two variables
                 T temp = h[i];
                 h[i] = h[parent(i)];
                 h[parent(i)] = temp;
@@ -45,15 +47,15 @@ namespace _03NetflixFeature
         public int size() => h.Count;
         public T peek()
         {
-            if (size() <= 0) return (T)Convert.ChangeType(-1, typeof(T));
-            else return h[0];
+            if (size() <= 0) { return (T)Convert.ChangeType(-1, typeof(T)); }
+            else { return h[0]; }
         }
         public void insert(T key)
         {
             // Push elements into vector from the back
             h.Add(key);
 
-            //Store index of last value of vector in variable i
+            // Store index of last value of vector in variable i
             int i = size() - 1;
 
             // Restore heap property
@@ -89,7 +91,7 @@ namespace _03NetflixFeature
             }
         }
 
-        //Bonus function: PrintHeap()
+        // Bonus function: PrintHeap()
         public void PrintHeap()
         {
             for (int i = 0; i <= size() - 1; i++)
